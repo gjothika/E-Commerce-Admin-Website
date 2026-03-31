@@ -4,15 +4,23 @@ import { API_ROUTES } from '../utils/Apiroutes'
 
 const Product = () => {
      const [product,setProduct] = useState([])
+     const [loading,setLoading] = useState(true)
 
      useEffect(()=>{
       axios.get(API_ROUTES.GET_ALL_PRODUCT)
       .then(res=>{
         setProduct(res.data)
       })
+      .catch((err)=>{console.log(err)})
+      .finally(()=>{setLoading(false)})
      },[])
 
-
+      if(loading){
+      return <div className="d-flex justify-content-center align-items-center m-5"style={{height:"400px"}}>
+          <div className="spinner-border"></div>
+        </div>
+    }
+    
   return (
     <div>
       <div className="mt-4 ms-3">

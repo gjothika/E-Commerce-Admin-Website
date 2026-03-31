@@ -6,6 +6,7 @@ import { API_ROUTES } from '../utils/Apiroutes'
 const Dashboard = () => {
     const [order,setOrder] = useState([])
     const [activeTable, setActiveTable] = useState("total")
+    const [loading,setLoading] = useState(true)
     const navigate = useNavigate()
 
     const completed = order.filter(o => o.status === "Delivered")
@@ -24,7 +25,14 @@ const Dashboard = () => {
             setOrder(res.data)
         })
         .catch(err=>console.log(err))
+        .finally(()=>{setLoading(false)})
     },[])
+
+    if(loading){
+      return <div className="d-flex justify-content-center align-items-center m-5"style={{height:"400px"}}>
+          <div className="spinner-border"></div>
+        </div>
+    }
     
   return (
     <div>
