@@ -10,11 +10,11 @@ const Dashboard = () => {
 
     const completed = order.filter(o => o.status === "Delivered")
     const pending = order.filter(o => o.status === "Ordered"||o.status === "Shipped"||o.status === "Out for Delivery")
-    const cancelled = order.filter(o => o.status === "Cancelled")
+    const cancelled = order.filter(o => o.status === "cancelled")
 
     const statuscolor = (status) => {
   if(status === "Delivered") return "badge bg-success"
-  if(status === "Cancelled") return "badge bg-danger"
+  if(status === "cancelled") return "badge bg-danger"
   return "badge bg-warning text-dark"
 }
 

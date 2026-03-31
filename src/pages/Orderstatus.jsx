@@ -60,7 +60,8 @@ const Orderstatus = () => {
             </div>
              <div>
                 <h5>Status</h5>
-                <select style={{maxWidth:"200px",cursor:"pointer",backgroundColor:"lightblue",outline:"none"}} className="border-0 rounded p-2"
+                <select disabled={order?.status==="Delivered" || order?.status==="cancelled"}
+                style={{maxWidth:"200px",cursor:"pointer",backgroundColor:"lightblue",outline:"none"}} className="border-0 rounded p-2"
                 value={order?.status}
         onChange={(e)=>updatedStatus(e.target.value)}
         >
@@ -68,6 +69,7 @@ const Orderstatus = () => {
             <option className="bg-light" value="Shipped">Shipped</option>
             <option className="bg-light" value="Out for Delivery">Out for Delivery</option>
             <option className="bg-light" value="Delivered">Delivered</option>
+            <option className="bg-light" value="cancelled">Cancelled</option>
         </select>
             </div>
           </div>
@@ -98,7 +100,7 @@ const Orderstatus = () => {
             </div>
              <div>
                 <h5>Payment Method</h5>
-                <input type="text" value={order?.paymentMethod} className="border-0 rounded bg-light p-2"style={{color:"green"}}></input>
+                <input type="text" value={order?.paymentMethod} className="border-0 rounded bg-light p-2"style={{color:"green",outline:"none"}}></input>
             </div>
           </div>
 
