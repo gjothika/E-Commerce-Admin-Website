@@ -20,7 +20,7 @@ const Sidebar = () => {
                 onMouseLeave={(e) => e.target.style.color = "white"}
                 ><i className="bi bi-tags me-2 fs-5"></i>Product</li>
                 <li className='nav-item mb-3'><i className="bi bi-bag me-2 fs-5"></i>Order</li>
-                <li className='nav-item 'style={{marginBottom:"290px"}}><i class="bi bi-person me-2 fs-4"></i>User</li>
+                <li className='nav-item 'style={{marginBottom:"290px"}}><i className="bi bi-person me-2 fs-4"></i>User</li>
                 <li className='nav-item mb-3'><i className="bi bi-box-arrow-right me-2"></i>Logout</li>
             </ul>
         </div>

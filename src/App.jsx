@@ -7,6 +7,9 @@ import Header from './components/Header'
 import Dashboard from './pages/Dashboard';
 import Product from './pages/Product';
 import Orderstatus from './pages/Orderstatus';
+import Addproduct from './pages/Addproduct';
+import SingleForm from "./pages/SingleForm";
+import VariantForm from "./pages/VariantForm";
 const App = () => {
   return (
     <div>
@@ -22,6 +25,9 @@ const App = () => {
               <Route path="/" element={<Dashboard />}/>
               <Route path="/Product" element={<Product />}/>
               <Route path="/Orderstatus/:id" element={<Orderstatus />}/>
+              <Route path="/Addproduct" element={<Addproduct />}/>
+              <Route path="/SingleForm" element={<SingleForm />}/>
+              <Route path="/VariantForm" element={<VariantForm />}/>
             </Routes>
           </div>
         </div>
